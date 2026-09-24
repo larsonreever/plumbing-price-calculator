@@ -1,3 +1,4 @@
+import { getAuthUserId } from "@convex-dev/auth/server";
 import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
 
@@ -52,5 +53,21 @@ export const leadCount = query({
   handler: async (ctx) => {
     const rows = await ctx.db.query("estimateRequests").collect();
     return rows.length;
+  },
+});
+
+/**
+ * Staff query (auth required): all leads, newest first, for the dashboard
+ * leads inbox. Fields mirror the public submit mutation — no secrets stored.
+ */
+export const listEstimateRequests = query({
+  args: {},
+  handler: async (ctx) => {
+    const userId = await getAuthUserId(ctx);
+    if (userId === null) return [];
+    return await ctx.db
+      .query("estimateRequests")
+      .order("desc")
+      .take(200);
   },
 });
