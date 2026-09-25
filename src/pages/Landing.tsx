@@ -166,8 +166,8 @@ export default function Landing() {
                 Browse priced services
                 <ArrowDown className="size-4 text-sp-red transition-transform group-hover:translate-y-0.5" />
               </a>
-              <a href="tel:+14165550100" className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground">
-                <Phone className="size-3.5 text-sp-blue" /> (416) 555-0100
+              <a href="tel:+17702737246" className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground">
+                <Phone className="size-3.5 text-sp-blue" /> (770) 273-7246
               </a>
             </div>
           </motion.div>
@@ -345,8 +345,8 @@ export default function Landing() {
             <SectionHeading index="04 — FAQ" title="Plumbing cost questions, answered" />
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
               Can&apos;t find your answer? Call{" "}
-              <a href="tel:+14165550100" className="font-semibold text-foreground underline decoration-sp-red underline-offset-4">
-                (416) 555-0100
+              <a href="tel:+17702737246" className="font-semibold text-foreground underline decoration-sp-red underline-offset-4">
+                (770) 273-7246
               </a>{" "}
               — a real plumber picks up, 24/7.
             </p>
@@ -387,7 +387,7 @@ export default function Landing() {
                 <a href="#calculator">Get my estimate</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="h-14 border-2 border-background bg-transparent px-8 font-display text-base font-bold uppercase tracking-wide text-background hover:bg-background hover:text-ink">
-                <a href="tel:+14165550100">Call (416) 555-0100</a>
+                <a href="tel:+17702737246">Call (770) 273-7246</a>
               </Button>
             </div>
           </div>

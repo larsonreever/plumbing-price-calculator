@@ -407,7 +407,7 @@ export default function PlumbingCalculator({ compact = false }: { compact?: bool
                   type="tel"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  placeholder="(416) 555-0100"
+                  placeholder="(770) 273-7246"
                   required
                   className="h-11 border-ink"
                 />
@@ -494,7 +494,7 @@ export default function PlumbingCalculator({ compact = false }: { compact?: bool
               </Button>
             </div>
             <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-              Urgent? Call Saving Plumbing now: (416) 555-0100
+              Urgent? Call Saving Plumbing now: (770) 273-7246
             </p>
           </div>
         )}
