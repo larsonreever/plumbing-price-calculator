@@ -250,3 +250,36 @@ export const BUSINESS_PHONE_TEL = "tel:+14162716745";
 export const BUSINESS_PHONE_DISPLAY = "(416) 271-6745";
 export const SCARBOROUGH_PAGE_URL =
   "https://savingplumbing.ca/service-areas/scarborough/";
+
+/* ------------------------------------------------------------------ */
+/* Location landing pages on savingplumbing.ca (SEO interlinking)      */
+/* All URLs verified against the live site sitemap. Cities without a   */
+/* dedicated page link to the closest parent landing page.             */
+/* ------------------------------------------------------------------ */
+
+export const LOCATION_PAGES: Record<string, string> = {
+  // Scarborough & East
+  scarborough: "https://savingplumbing.ca/service-areas/scarborough/",
+  "east-york": "https://savingplumbing.ca/service-areas/east-york-plumbing/",
+  pickering: "https://savingplumbing.ca/service-areas/plumbing-pickering-ontario/",
+  ajax: "https://savingplumbing.ca/service-areas/ajax-plumbers/",
+  markham: "https://savingplumbing.ca/service-areas/plumbing-markham-ontario/",
+
+  // Toronto
+  "downtown-toronto": "https://savingplumbing.ca/",
+  "midtown-toronto": "https://savingplumbing.ca/",
+  etobicoke: "https://savingplumbing.ca/service-areas/etobicoke-plumber/",
+
+  // North York & Vaughan
+  "north-york": "https://savingplumbing.ca/service-areas/plumbing-north-york-ontario/",
+  vaughan: "https://savingplumbing.ca/service-areas/plumber-vaughan-ontario/",
+  "richmond-hill": "https://savingplumbing.ca/service-areas/plumbing-richmond-hill-ontario/",
+  aurora: "https://savingplumbing.ca/service-areas/york-region-on/",
+  newmarket: "https://savingplumbing.ca/service-areas/york-region-on/",
+
+  // Mississauga & West
+  mississauga: "https://savingplumbing.ca/service-areas/plumber-mississauga-ontario/",
+  brampton: "https://savingplumbing.ca/service-areas/peel-region-on/brampton/",
+  oakville: "https://savingplumbing.ca/service-areas/",
+  milton: "https://savingplumbing.ca/service-areas/",
+};

@@ -2,7 +2,7 @@ import PlumbingCalculator from "@/components/PlumbingCalculator";
 import { SCARBOROUGH_PAGE_URL } from "@/lib/plumbingData";
 
 /**
- * Standalone page designed for iframe embedding on savingplumbing.com.
+ * Standalone page designed for iframe embedding on savingplumbing.ca.
  *
  * WordPress usage:
  *   <iframe
@@ -19,7 +19,7 @@ export default function CalculatorEmbed() {
         <p className="mt-4 text-center font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
           Powered by{" "}
           <a
-            href="https://www.savingplumbing.com"
+            href="https://savingplumbing.ca"
             target="_blank"
             rel="noopener noreferrer"
             className="underline decoration-sp-red underline-offset-4 hover:text-foreground"
@@ -44,7 +44,7 @@ export default function CalculatorEmbed() {
             "@context": "https://schema.org",
             "@type": "WebApplication",
             name: "Plumbing Cost Calculator — Saving Plumbing",
-            url: "https://www.savingplumbing.com/plumbing-calculator/",
+            url: "https://savingplumbing.ca/plumbing-calculator/",
             applicationCategory: "UtilitiesApplication",
             operatingSystem: "Any",
             offers: { "@type": "Offer", price: "0", priceCurrency: "CAD" },

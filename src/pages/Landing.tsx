@@ -19,6 +19,7 @@ import {
   BUSINESS_PHONE_TEL,
   formatCad,
   LOCATIONS,
+  LOCATION_PAGES,
   LOCATION_ZONES,
   SCARBOROUGH_PAGE_URL,
   SERVICES,
@@ -301,8 +302,10 @@ export default function Landing() {
                   {LOCATIONS.filter((l) => l.zone === zone).map((loc) => (
                     <li key={loc.slug}>
                       <a
-                        href={loc.slug === "scarborough" ? SCARBOROUGH_PAGE_URL : "#calculator"}
-                        {...(loc.slug === "scarborough" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        href={LOCATION_PAGES[loc.slug] ?? "#calculator"}
+                        {...(LOCATION_PAGES[loc.slug]
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
                         className="group inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
                       >
                         <span className="size-1.5 bg-sp-blue opacity-60 transition-opacity group-hover:opacity-100" />
@@ -460,6 +463,16 @@ export default function Landing() {
                   <li><a href="#areas" className="text-muted-foreground hover:text-foreground">Service area</a></li>
                   <li>
                     <a
+                      href="https://savingplumbing.ca/service-areas/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      All service areas
+                    </a>
+                  </li>
+                  <li>
+                    <a
                       href={SCARBOROUGH_PAGE_URL}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -475,7 +488,7 @@ export default function Landing() {
           </div>
           <div className="mt-10 flex flex-col justify-between gap-3 border-t border-border pt-6 sm:flex-row">
             <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-              © {new Date().getFullYear()} Saving Plumbing · savingplumbing.com
+              © {new Date().getFullYear()} Saving Plumbing · savingplumbing.ca
             </p>
             <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
               Plumbing estimates are typical ranges, not final quotes
