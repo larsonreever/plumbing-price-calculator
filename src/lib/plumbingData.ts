@@ -241,3 +241,12 @@ export function formatCad(value: number): string {
     maximumFractionDigits: 0,
   }).format(value);
 }
+
+/* ------------------------------------------------------------------ */
+/* Business contact info (single source of truth)                      */
+/* ------------------------------------------------------------------ */
+
+export const BUSINESS_PHONE_TEL = "tel:+14162716745";
+export const BUSINESS_PHONE_DISPLAY = "(416) 271-6745";
+export const SCARBOROUGH_PAGE_URL =
+  "https://savingplumbing.ca/service-areas/scarborough/";

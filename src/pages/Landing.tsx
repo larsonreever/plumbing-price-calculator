@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowDown,
@@ -5,6 +6,7 @@ import {
   BadgeCheck,
   Clock3,
   MapPin,
+  Phone,
   ShieldCheck,
 } from "lucide-react";
 import { useQuery } from "convex/react";
@@ -13,9 +15,12 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import PlumbingCalculator from "@/components/PlumbingCalculator";
 import {
+  BUSINESS_PHONE_DISPLAY,
+  BUSINESS_PHONE_TEL,
   formatCad,
   LOCATIONS,
   LOCATION_ZONES,
+  SCARBOROUGH_PAGE_URL,
   SERVICES,
   SERVICE_GROUPS,
 } from "@/lib/plumbingData";
@@ -61,7 +66,7 @@ function SectionHeading({
 }: {
   index: string;
   title: string;
-  intro?: string;
+  intro?: ReactNode;
 }) {
   return (
     <div className="border-b-2 border-ink pb-6">
@@ -113,9 +118,14 @@ export default function Landing() {
             </a>
           </nav>
           <div className="flex items-center gap-3">
-            <span className="hidden items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-muted-foreground sm:flex">
+            <a
+              href={SCARBOROUGH_PAGE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground sm:flex"
+            >
               <MapPin className="size-3 text-sp-red" /> Scarborough, ON
-            </span>
+            </a>
             <Button asChild className="hidden font-display text-xs font-bold uppercase tracking-wide sm:inline-flex">
               <a href="#calculator">Get estimate</a>
             </Button>
@@ -164,6 +174,9 @@ export default function Landing() {
               <a href="#services" className="group inline-flex items-center gap-2 font-display font-bold uppercase tracking-wide">
                 Browse priced services
                 <ArrowDown className="size-4 text-sp-red transition-transform group-hover:translate-y-0.5" />
+              </a>
+              <a href={BUSINESS_PHONE_TEL} className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground">
+                <Phone className="size-3.5 text-sp-blue" /> {BUSINESS_PHONE_DISPLAY}
               </a>
             </div>
           </motion.div>
@@ -259,7 +272,21 @@ export default function Landing() {
           <SectionHeading
             index="02 — Service area"
             title="From Scarborough to Oakville"
-            intro="Headquartered in Scarborough, on call across the Greater Toronto Area. Select your city in the calculator — travel is already included in the number."
+            intro={
+              <>
+                Headquartered in{" "}
+                <a
+                  href={SCARBOROUGH_PAGE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-foreground underline decoration-sp-red underline-offset-4 hover:text-sp-red"
+                >
+                  Scarborough
+                </a>
+                , on call across the Greater Toronto Area. Select your city in the calculator —
+                travel is already included in the number.
+              </>
+            }
           />
           <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {LOCATION_ZONES.map((zone, i) => (
@@ -274,7 +301,8 @@ export default function Landing() {
                   {LOCATIONS.filter((l) => l.zone === zone).map((loc) => (
                     <li key={loc.slug}>
                       <a
-                        href="#calculator"
+                        href={loc.slug === "scarborough" ? SCARBOROUGH_PAGE_URL : "#calculator"}
+                        {...(loc.slug === "scarborough" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                         className="group inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
                       >
                         <span className="size-1.5 bg-sp-blue opacity-60 transition-opacity group-hover:opacity-100" />
@@ -400,8 +428,16 @@ export default function Landing() {
                 </span>
               </div>
               <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
-                Residential and commercial plumbing contractor headquartered in Scarborough,
-                serving the Greater Toronto Area. Licensed, insured, available 24/7.
+                Residential and commercial plumbing contractor headquartered in{" "}
+                <a
+                  href={SCARBOROUGH_PAGE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground underline decoration-sp-red underline-offset-4 hover:text-sp-red"
+                >
+                  Scarborough
+                </a>
+                , serving the Greater Toronto Area. Licensed, insured, available 24/7.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-10 sm:gap-16">
@@ -422,6 +458,16 @@ export default function Landing() {
                 <ul className="mt-3 space-y-2 text-sm">
                   <li><a href="#services" className="text-muted-foreground hover:text-foreground">Services</a></li>
                   <li><a href="#areas" className="text-muted-foreground hover:text-foreground">Service area</a></li>
+                  <li>
+                    <a
+                      href={SCARBOROUGH_PAGE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      Scarborough plumbers
+                    </a>
+                  </li>
                   <li><a href="/dashboard" className="text-muted-foreground hover:text-foreground">Staff leads inbox</a></li>
                 </ul>
               </div>

@@ -1,4 +1,5 @@
 import PlumbingCalculator from "@/components/PlumbingCalculator";
+import { SCARBOROUGH_PAGE_URL } from "@/lib/plumbingData";
 
 /**
  * Standalone page designed for iframe embedding on savingplumbing.com.
@@ -25,7 +26,15 @@ export default function CalculatorEmbed() {
           >
             Saving Plumbing
           </a>{" "}
-          · Licensed &amp; insured · Scarborough, ON
+          · Licensed &amp; insured ·{" "}
+          <a
+            href={SCARBOROUGH_PAGE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-sp-red underline-offset-4 hover:text-foreground"
+          >
+            Scarborough, ON
+          </a>
         </p>
       </div>
       <script

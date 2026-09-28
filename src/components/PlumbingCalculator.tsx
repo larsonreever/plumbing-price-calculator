@@ -15,6 +15,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import {
+  BUSINESS_PHONE_DISPLAY,
+  BUSINESS_PHONE_TEL,
   calculateEstimate,
   formatCad,
   LOCATIONS,
@@ -494,7 +496,13 @@ export default function PlumbingCalculator({ compact = false }: { compact?: bool
               </Button>
             </div>
             <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-              Urgent? Mention it when we call you back — we run 24/7 emergency service.
+              Urgent? Call now:{" "}
+              <a
+                href={BUSINESS_PHONE_TEL}
+                className="font-semibold text-foreground underline decoration-sp-red underline-offset-4 hover:text-sp-red"
+              >
+                {BUSINESS_PHONE_DISPLAY}
+              </a>
             </p>
           </div>
         )}
